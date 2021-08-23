@@ -23,7 +23,7 @@ class ReportCommandSpec extends AnyFunSpec {
           val newVector = reportCommand.execute(space, Some(vector))
           assert(newVector == vector.asRight)
         }
-        assert(out.toString == "Current vector: 3, 3, NORTH\n")
+        assert(out.toString == "Report: 3, 3, NORTH\n")
 
       }
     }

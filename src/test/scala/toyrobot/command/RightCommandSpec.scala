@@ -35,6 +35,7 @@ class RightCommandSpec extends AnyFunSpec {
             val nextRightCommand = RightCommand.create
             nextRightCommand.execute(space, Some(newVector))
           }
+          case _ => assert(false)
         }
 
         assert(newVector == expectedVector.asRight)

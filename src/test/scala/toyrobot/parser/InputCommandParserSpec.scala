@@ -1,6 +1,7 @@
 package toyrobot.parser
 
 
+import cats.ApplicativeError
 import cats.syntax.either._
 import org.scalatest.funspec.AnyFunSpec
 import toyrobot.command._
@@ -50,10 +51,10 @@ class InputCommandParserSpec extends AnyFunSpec {
     }
 
     describe(description = "when it parse unknown input string") {
-      it("create ResetCommand") {
+      it("returns unknown command error") {
         val command = InputCommandParser.parse(inputStr = "PLACE")
 
-        assert(command == UnknownCommandError.asLeft)
+        assert(command == UnknownCommandError("PLACE").asLeft)
       }
     }
   }
