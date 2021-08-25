@@ -1,5 +1,5 @@
-mainClass in assembly := Some("toyrobot.MainIO")
+assembly / mainClass := Some("toyrobot.MainIO")
 
-test in assembly := {}
+assembly / test := {}
 
-assemblyJarName in assembly := "toyrobot.jar"
+assembly / assemblyJarName := "toyrobot.jar"
